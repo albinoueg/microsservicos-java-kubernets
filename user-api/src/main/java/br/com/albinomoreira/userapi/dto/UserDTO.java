@@ -1,5 +1,6 @@
 package br.com.albinomoreira.userapi.dto;
 
+import br.com.albinomoreira.userapi.model.User;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,4 +14,15 @@ public class UserDTO {
     private String email;
     private String telefone;
     private LocalDateTime dataCadastro;
+
+    public static UserDTO convert(User user){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setNome(user.getNome());
+        userDTO.setEndereco(user.getEndereco());
+        userDTO.setCpf(user.getCpf());
+        userDTO.setEmail(user.getEmail());
+        userDTO.setTelefone(user.getTelefone());
+        userDTO.setDataCadastro(user.getDataCadastro());
+        return userDTO;
+    }
 }
