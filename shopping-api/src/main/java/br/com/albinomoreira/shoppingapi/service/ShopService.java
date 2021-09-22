@@ -1,6 +1,8 @@
 package br.com.albinomoreira.shoppingapi.service;
 
+import br.com.albinomoreira.shoppingapi.converter.DTOConverter;
 import br.com.albinomoreira.shoppingapi.dto.ShopDTO;
+import br.com.albinomoreira.shoppingapi.dto.ShopReportDTO;
 import br.com.albinomoreira.shoppingapi.model.Shop;
 import br.com.albinomoreira.shoppingapi.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +30,8 @@ public class ShopService {
     }
 
     public List<ShopDTO> getByDate(ShopDTO shopDTO){
-        List<Shop> shops = shopRepository.findAllByDateGreaterThanEquals(shopDTO.getDate());
-        return shops.stream().map(ShopDTO::convert).collect(Collectors.toList());
+        List<Shop> shops = shopRepository.findAllByDateGreaterThan(shopDTO.getDate());
+        return shops.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     public ShopDTO findById(long productId){
@@ -48,5 +50,15 @@ public class ShopService {
 
         shop = shopRepository.save(shop);
         return ShopDTO.convert(shop);
+    }
+
+    public List<ShopDTO> getShopByFilter(Date dataInicio, Date dataFim, Float valorMinimo){
+
+        List<Shop> shops = shopRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
+        return shops.stream().map(DTOConverter::convert).collect(Collectors.toList());
+    }
+
+    public ShopReportDTO getReportByDate(Date dataInicio, Date dataFim){
+        return shopRepository.getReportByDate(dataInicio, dataFim);
     }
 }
