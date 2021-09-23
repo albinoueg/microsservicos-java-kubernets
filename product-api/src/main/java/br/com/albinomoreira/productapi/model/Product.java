@@ -1,6 +1,6 @@
 package br.com.albinomoreira.productapi.model;
 
-import br.com.albinomoreira.productapi.dto.ProductDTO;
+import br.com.albinomoreira.shoppingclient.dto.ProductDTO;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -27,8 +27,8 @@ public class Product {
         product.setPreco(productDTO.getPreco());
         product.setDescricao(productDTO.getDescricao());
         product.setProductIdentifier(productDTO.getProductIdentifier());
-        if(productDTO.getCategoryDTO() != null){
-            product.setCategory(Category.convert(productDTO.getCategoryDTO()));
+        if(productDTO.getCategory() != null){
+            product.setCategory(Category.convert(productDTO.getCategory()));
         }
         return product;
     }
