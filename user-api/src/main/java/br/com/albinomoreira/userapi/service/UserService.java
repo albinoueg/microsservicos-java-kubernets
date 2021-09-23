@@ -1,6 +1,7 @@
 package br.com.albinomoreira.userapi.service;
 
-import br.com.albinomoreira.userapi.dto.UserDTO;
+import br.com.albinomoreira.shoppingclient.dto.UserDTO;
+import br.com.albinomoreira.userapi.converter.DTOConverter;
 import br.com.albinomoreira.userapi.model.User;
 import br.com.albinomoreira.userapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,20 +19,20 @@ public class UserService {
 
     public List<UserDTO> getAll(){
         List<User> usuarios = userRepository.findAll();
-        return usuarios.stream().map(UserDTO::convert).collect(Collectors.toList());
+        return usuarios.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     public UserDTO findById(long userId){
         Optional<User> usuario = userRepository.findById(userId);
         if(usuario.isPresent()){
-            return UserDTO.convert(usuario.get());
+            return DTOConverter.convert(usuario.get());
         }
         return null;
     }
 
     public UserDTO save(UserDTO userDTO){
         User user = userRepository.save(User.convert(userDTO));
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
     public UserDTO delete(long userId){
@@ -44,13 +45,13 @@ public class UserService {
 
     public List<UserDTO> queryByNome(String nome){
         List<User> usuarios = userRepository.queryByNomeLike(nome);
-        return usuarios.stream().map(UserDTO::convert).collect(Collectors.toList());
+        return usuarios.stream().map(DTOConverter::convert).collect(Collectors.toList());
     }
 
     public UserDTO findByCpf(String cpf) {
         Optional<User> usuario = userRepository.findByCpf(cpf);
         if(usuario.isPresent()){
-            return UserDTO.convert(usuario.get());
+            return DTOConverter.convert(usuario.get());
         }
         return null;
     }

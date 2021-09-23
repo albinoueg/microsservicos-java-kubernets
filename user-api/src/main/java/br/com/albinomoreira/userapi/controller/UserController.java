@@ -1,13 +1,9 @@
 package br.com.albinomoreira.userapi.controller;
 
-import br.com.albinomoreira.userapi.dto.UserDTO;
+import br.com.albinomoreira.shoppingclient.dto.UserDTO;
 import br.com.albinomoreira.userapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.PostConstruct;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

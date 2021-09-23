@@ -1,21 +1,10 @@
-package br.com.albinomoreira.userapi.dto;
+package br.com.albinomoreira.userapi.converter;
 
+import br.com.albinomoreira.shoppingclient.dto.UserDTO;
 import br.com.albinomoreira.userapi.model.User;
-import lombok.Data;
 
-import java.time.LocalDateTime;
-
-@Data
-public class UserDTO {
-
-    private String nome;
-    private String cpf;
-    private String endereco;
-    private String email;
-    private String telefone;
-    private LocalDateTime dataCadastro;
-
-    public static UserDTO convert(User user){
+public class DTOConverter {
+    public static UserDTO convert(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setNome(user.getNome());
         userDTO.setEndereco(user.getEndereco());

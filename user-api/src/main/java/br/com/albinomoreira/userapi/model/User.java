@@ -1,13 +1,13 @@
 package br.com.albinomoreira.userapi.model;
 
-import br.com.albinomoreira.userapi.dto.UserDTO;
+import br.com.albinomoreira.shoppingclient.dto.UserDTO;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Data
@@ -21,7 +21,7 @@ public class User {
     private String endereco;
     private String email;
     private String telefone;
-    private LocalDateTime dataCadastro;
+    private Date dataCadastro;
 
     public static User convert(UserDTO userDTO){
         User user = new User();
