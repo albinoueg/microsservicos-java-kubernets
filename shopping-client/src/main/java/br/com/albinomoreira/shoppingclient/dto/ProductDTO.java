@@ -13,6 +13,8 @@ public class ProductDTO {
     private String nome;
     @NotNull
     private Float preco;
+    @NotBlank
+    private String descricao;
     @NotNull
     private CategoryDTO category;
 }
