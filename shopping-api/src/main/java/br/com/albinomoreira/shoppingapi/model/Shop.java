@@ -26,7 +26,7 @@ public class Shop {
     public static Shop convert(ShopDTO shopDTO){
         Shop shop = new Shop();
         shop.setUserIdentifier(shopDTO.getUserIdentifier());
-        shop.setTotal(shop.getTotal());
+        shop.setTotal(shopDTO.getTotal());
         shop.setDate(shopDTO.getDate());
         shop.setItens(shopDTO.getItems().stream().map(Item::convert).collect(Collectors.toList()));
         return shop;

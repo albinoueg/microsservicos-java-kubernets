@@ -44,11 +44,11 @@ public class ShopService {
 
     public ShopDTO save(ShopDTO shopDTO){
         shopDTO.setTotal(shopDTO.getItems().stream().map(x -> x.getPrice()).reduce((float) 0, Float::sum));
+        shopDTO.setDate(new Date());
 
         Shop shop = Shop.convert(shopDTO);
-        shop.setDate(new Date());
-
         shop = shopRepository.save(shop);
+
         return ShopDTO.convert(shop);
     }
 
