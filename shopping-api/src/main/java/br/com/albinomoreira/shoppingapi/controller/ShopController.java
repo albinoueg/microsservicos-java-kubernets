@@ -1,8 +1,8 @@
 package br.com.albinomoreira.shoppingapi.controller;
 
-import br.com.albinomoreira.shoppingapi.dto.ShopDTO;
-import br.com.albinomoreira.shoppingapi.dto.ShopReportDTO;
 import br.com.albinomoreira.shoppingapi.service.ShopService;
+import br.com.albinomoreira.shoppingclient.dto.ShopDTO;
+import br.com.albinomoreira.shoppingclient.dto.ShopReportDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;

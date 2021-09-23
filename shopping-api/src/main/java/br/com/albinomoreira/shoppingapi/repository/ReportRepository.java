@@ -1,7 +1,7 @@
 package br.com.albinomoreira.shoppingapi.repository;
 
-import br.com.albinomoreira.shoppingapi.dto.ShopReportDTO;
 import br.com.albinomoreira.shoppingapi.model.Shop;
+import br.com.albinomoreira.shoppingclient.dto.ShopReportDTO;
 
 import java.util.Date;
 import java.util.List;

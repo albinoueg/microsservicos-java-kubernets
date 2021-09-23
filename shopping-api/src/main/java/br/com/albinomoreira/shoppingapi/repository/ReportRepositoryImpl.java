@@ -1,7 +1,6 @@
 package br.com.albinomoreira.shoppingapi.repository;
-
-import br.com.albinomoreira.shoppingapi.dto.ShopReportDTO;
 import br.com.albinomoreira.shoppingapi.model.Shop;
+import br.com.albinomoreira.shoppingclient.dto.ShopReportDTO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

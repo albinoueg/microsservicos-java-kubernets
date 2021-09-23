@@ -1,9 +1,9 @@
 package br.com.albinomoreira.shoppingapi.converter;
 
-import br.com.albinomoreira.shoppingapi.dto.ItemDTO;
-import br.com.albinomoreira.shoppingapi.dto.ShopDTO;
 import br.com.albinomoreira.shoppingapi.model.Item;
 import br.com.albinomoreira.shoppingapi.model.Shop;
+import br.com.albinomoreira.shoppingclient.dto.ItemDTO;
+import br.com.albinomoreira.shoppingclient.dto.ShopDTO;
 
 import java.util.stream.Collectors;
 

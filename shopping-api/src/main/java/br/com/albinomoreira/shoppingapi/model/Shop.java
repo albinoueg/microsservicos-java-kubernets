@@ -1,6 +1,6 @@
 package br.com.albinomoreira.shoppingapi.model;
 
-import br.com.albinomoreira.shoppingapi.dto.ShopDTO;
+import br.com.albinomoreira.shoppingclient.dto.ShopDTO;
 import lombok.Data;
 
 import javax.persistence.*;
