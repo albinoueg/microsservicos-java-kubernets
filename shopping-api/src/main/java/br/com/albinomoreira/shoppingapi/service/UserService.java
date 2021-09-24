@@ -2,6 +2,7 @@ package br.com.albinomoreira.shoppingapi.service;
 
 import br.com.albinomoreira.shoppingclient.dto.UserDTO;
 import br.com.albinomoreira.shoppingclient.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -11,7 +12,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service
 public class UserService {
 
-    private String userApiURL = "http://localhost:8080";
+    @Value("${USER_API_URL:http://localhost:8080}")
+    private String userApiURL;
 
     public UserDTO getUserByCpf(String cpf, String key){
         try {
