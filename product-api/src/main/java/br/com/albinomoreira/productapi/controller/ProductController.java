@@ -1,9 +1,9 @@
 package br.com.albinomoreira.productapi.controller;
 
-import br.com.albinomoreira.productapi.exception.ProductNotFoundException;
 import br.com.albinomoreira.productapi.model.Product;
 import br.com.albinomoreira.productapi.service.ProductService;
 import br.com.albinomoreira.shoppingclient.dto.ProductDTO;
+import br.com.albinomoreira.shoppingclient.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
