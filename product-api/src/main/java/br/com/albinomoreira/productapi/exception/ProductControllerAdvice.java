@@ -1,6 +1,8 @@
 package br.com.albinomoreira.productapi.exception;
 
 import br.com.albinomoreira.productapi.dto.ErrorDTO;
+import br.com.albinomoreira.shoppingclient.exception.CategoryNotFoundException;
+import br.com.albinomoreira.shoppingclient.exception.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
