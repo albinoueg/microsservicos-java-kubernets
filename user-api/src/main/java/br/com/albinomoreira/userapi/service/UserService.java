@@ -1,6 +1,7 @@
 package br.com.albinomoreira.userapi.service;
 
 import br.com.albinomoreira.shoppingclient.dto.UserDTO;
+import br.com.albinomoreira.shoppingclient.exception.UserNotFoundException;
 import br.com.albinomoreira.userapi.converter.DTOConverter;
 import br.com.albinomoreira.userapi.model.User;
 import br.com.albinomoreira.userapi.repository.UserRepository;
@@ -27,7 +28,7 @@ public class UserService {
         if(usuario.isPresent()){
             return DTOConverter.convert(usuario.get());
         }
-        return null;
+        throw new UserNotFoundException();
     }
 
     public UserDTO save(UserDTO userDTO){
@@ -40,7 +41,7 @@ public class UserService {
         if(user.isPresent()){
             userRepository.delete(user.get());
         }
-        return null;
+        throw new UserNotFoundException();
     }
 
     public List<UserDTO> queryByNome(String nome){
@@ -53,6 +54,6 @@ public class UserService {
         if(usuario.isPresent()){
             return DTOConverter.convert(usuario.get());
         }
-        return null;
+        throw new UserNotFoundException();
     }
 }
